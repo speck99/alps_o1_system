@@ -1,0 +1,44 @@
+// mediatek static library for target
+// ========================================================
+cc_library_static {
+    name: "libbt-mtk_cust",
+    defaults: ["fluoride_defaults"],
+    local_include_dirs: ["include"],
+    include_dirs: [
+        "system/bt",
+        "system/bt/bta/include",
+        "system/bt/bta/sys/",
+        "system/bt/btif/include",
+        "system/bt/include",
+        "system/bt/btcore/include",
+        "system/bt/hci/include",
+        "system/bt/stack/include",
+        "system/bt/stack/btm/btm_int.h",
+        "system/bt/udrv/include",
+        "system/bt/utils/include"
+    ],
+
+    srcs: [
+        "bta/mtk_bta_ag_cmd.cc",
+        "bta/av/mtk_bta_av_act.cc",
+        "bta/hh/bta_hh_le.cc",
+        "bta/dm/mtk_bta_dm_act.cc",
+        "btif/mtk_btif_av.cc",
+        "btif/src/mtk_btif_rc.cc",
+        "btif/src/mtk_btif_dm.cc",
+        "btif/co/bta_gatts_co.cc",
+        "config/log_mode.cc",
+        "config/log_time.cc",
+        "config/mtk_stack_config.cc",
+        "gatt/gatts_mtk.cc",
+        "hci/fw_logger_filter.cc",
+        "hci/fw_logger_switch.cc",
+        "hci/hci_inbound_data_monitor.cc",
+        "hci/twrite.cc",
+        "interop/interop_mtk.cc",
+        "stack/mtk_sdp_service.cc",
+        "stack/btm/btm_sco.cc",
+        "stack/a2dp/a2dp_sbc_encoder.cc",
+        "stack/l2cap/l2c_api.cc"
+    ],
+}
